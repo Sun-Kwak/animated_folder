@@ -67,6 +67,14 @@ class _AnimatedFolderState extends State<AnimatedFolder>
     super.initState();
   }
 
+  @override
+  void dispose() {
+    for (var controller in controllers) {
+      controller.dispose();
+    }
+    super.dispose();
+  }
+
   void initializeValues() {
     /// set the main color of the folder
     color = widget.mainColor ?? const Color(0xFF56AAF3);

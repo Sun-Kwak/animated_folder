@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/animated_folder.dart';
+import 'package:animated_folder/animated_folder.dart';
 
 void main() {
   runApp(const MyApp());
