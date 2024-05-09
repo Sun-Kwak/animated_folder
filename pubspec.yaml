@@ -1,0 +1,16 @@
+name: animated_folder
+description: AnimatedFolder widget provides an interactive way to display content in a folder with animated sheets, enhancing user experience.
+
+environment:
+  sdk: ">=3.2.3 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^2.0.0
+
+flutter:
