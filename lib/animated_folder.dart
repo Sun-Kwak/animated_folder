@@ -24,6 +24,7 @@ class AnimatedFolder extends StatefulWidget {
   final List<Color>? folderSheetColors;
 
   /// how the animation will be triggered. default is depending on the platform. If it is web, it is triggered by hover. Otherwise, it is triggered by tap
+  /// if it is set to none, the animation will not be triggered
   final AnimationBy? animationBy;
 
   AnimatedFolder({
@@ -151,17 +152,21 @@ class _AnimatedFolderState extends State<AnimatedFolder>
     final double radius = widget.width! * 0.065;
 
     void onEnterOrTapForward(PointerEnterEvent e) {
-      setState(() {
-        isBreak = false;
-        controllers[currentControllerIndex].forward();
-      });
+      if (widget.animationBy != AnimationBy.none) {
+        setState(() {
+          isBreak = false;
+          controllers[currentControllerIndex].forward();
+        });
+      }
     }
 
     void onExitOrTapReverse(PointerExitEvent e) {
-      setState(() {
-        isBreak = true;
-        controllers[currentControllerIndex].reverse();
-      });
+      if (widget.animationBy != AnimationBy.none) {
+        setState(() {
+          isBreak = true;
+          controllers[currentControllerIndex].reverse();
+        });
+      }
     }
 
     return GestureDetector(
@@ -304,4 +309,5 @@ class _AnimatedFolderState extends State<AnimatedFolder>
 enum AnimationBy {
   hover,
   tap,
+  none,
 }
