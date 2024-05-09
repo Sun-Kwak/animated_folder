@@ -1,5 +1,6 @@
 name: animated_folder
 description: AnimatedFolder widget provides an interactive way to display content in a folder with animated sheets, enhancing user experience.
+version: 0.0.1
 
 environment:
   sdk: ">=3.2.3 <4.0.0"
